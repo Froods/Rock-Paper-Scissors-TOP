@@ -85,4 +85,23 @@ function playRound(hChoice, cChoice) {
     
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+function playGame() {
+
+    for (let i = 0; i < 5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+
+    console.log(`Your score: ${humanScore}`);
+    console.log(`PC score: ${computerScore}`);
+
+    if (humanScore > computerScore) {        // Human wins
+        console.log("You win!");
+    } else if (humanScore < computerScore) { // PC wins
+        console.log("PC wins!");
+    } else {                                 // Tie
+        console.log("Tie!");
+    }
+
+}
+
+playGame()
